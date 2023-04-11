@@ -5,8 +5,13 @@
       <img [src]="photoCover">
     </div>
 
-    <div class="small-card__title">
-      <h1><a href="#">{{cardTitle}}</a></h1>
+    <div class="small-card__text-column">
+      <div class="small-card__published">
+        <p>{{publishedDate}}</p>
+      </div>
+      <div class="small-card__title">
+        <h1><a [routerLink]="['content', id]">{{cardTitle}}</a></h1>
+      </div>
     </div>
   </div>
   <div class="container__small-card__separator">

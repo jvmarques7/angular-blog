@@ -1,27 +1,22 @@
-<header>
-  <app-menu-bar></app-menu-bar>
-</header>
 <app-menu-title></app-menu-title>
 <div class="container__articles">
   <div class="articles__main">
     <app-big-card
-      photoCover="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png"
-      cardTitle="Nova versão do Angular!"
-      cardDescription="Destacando a nova versão do Angular 15.3 já em stabled version."
+      [id]="dataFake[0].id"
+      [photoCover]="dataFake[0].photo"
+      [cardTitle]="dataFake[0].title"
+      [cardDescription]="dataFake[0].description"
+      [publishedDate]="dataFake[0].published"
     ></app-big-card>
   </div>
   <div class="articles__others">
-    <app-small-card
-    photoCover="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png"
-      cardTitle="Nova versão do Angular!"
-    ></app-small-card>
-    <app-small-card
-    photoCover="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png"
-      cardTitle="Nova versão do Angular!"
-    ></app-small-card>
-    <app-small-card
-    photoCover="https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png"
-      cardTitle="Nova versão do Angular!"
-    ></app-small-card>
+    <div *ngFor="let item of dataFake">
+      <app-small-card *ngIf="item.id != '1'"
+        [id]="item.id"
+        [photoCover]="item.photo"
+        [cardTitle]="item.title"
+        [publishedDate]="item.published"
+      ></app-small-card>
+    </div>
   </div>
 </div>

@@ -15,7 +15,12 @@
 .big-card__photo > img {
   width: 100%;
   min-width: 400px;
-  height: 200px;
+  height: auto;
+}
+
+.big-card__published > p {
+  font-size: 13px;
+  color: grey;
 }
 
 .big-card__title > h1 {
